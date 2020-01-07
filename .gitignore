@@ -3,5 +3,6 @@ bin1
 .classpath
 .project
 .settings/*
-
+.idea
 /bin1/
+target
