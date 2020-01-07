@@ -18,7 +18,7 @@ public class FirstUniqueCharacter {
     for(int i = 0; i < input.length(); i ++ ) {
       final Character c = input.charAt(i);
       if(countMap.containsKey(c)) {
-        int count = (countMap.get(c) + 1);
+        int count = countMap.get(c) + 1;
         countMap.put(c, count);
       } else {
         countMap.put(c, 1);
