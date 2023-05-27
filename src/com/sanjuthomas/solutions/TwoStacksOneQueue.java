@@ -7,18 +7,17 @@ import java.util.Stack;
  * @author Sanju Thomas
  *
  */
-public class TwoStacksOneQueue {
+public class TwoStacksOneQueue<E> {
   
-  private Stack<Integer> s1 = new Stack<Integer>();
-  private Stack<Integer> s2 = new Stack<Integer>();
+  private Stack<E> s1 = new Stack<>();
+  private Stack<E> s2 = new Stack<>();
   
-  public void enQueue(Integer i) {
-    
-    s1.push(i);
-    
+  public void enQueue(E e) {
+    s1.push(e);
   }
   
-  public Integer deQueue() {
+  public E deQueue() {
+    if(s2.isEmpty() && s1.isEmpty()) throw new RuntimeException("Queue is empty");
     if(s2.isEmpty()) {
       while(!s1.isEmpty()) {
         s2.push(s1.pop());
@@ -26,10 +25,9 @@ public class TwoStacksOneQueue {
     }
     return s2.pop();
   }
-  
-  
+
   public static void main(String[] args) {
-    final TwoStacksOneQueue instance = new TwoStacksOneQueue();
+    final TwoStacksOneQueue<Integer> instance = new TwoStacksOneQueue();
     instance.enQueue(1);
     System.out.println(instance.deQueue());
     instance.enQueue(2);
@@ -41,5 +39,4 @@ public class TwoStacksOneQueue {
     System.out.println(instance.deQueue());
     System.out.println(instance.deQueue());
   }
-
 }

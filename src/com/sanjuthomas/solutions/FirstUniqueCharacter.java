@@ -13,7 +13,7 @@ public class FirstUniqueCharacter {
       return null;
     }
 
-    final Map<Character, Integer> countMap = new LinkedHashMap<Character, Integer>();
+    final Map<Character, Integer> countMap = new LinkedHashMap<>();
 
     for(int i = 0; i < input.length(); i ++ ) {
       final Character c = input.charAt(i);
@@ -35,5 +35,4 @@ public class FirstUniqueCharacter {
   public static void main(String[] args) {
     System.out.println(new FirstUniqueCharacter().firstUniqueCharacter("efficient"));
   }
-
 }

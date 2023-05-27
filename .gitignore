@@ -6,3 +6,6 @@ bin1
 .idea
 /bin1/
 target
+out
+.DS_Store
+*.iml
